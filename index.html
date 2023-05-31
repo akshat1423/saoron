@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+<style>
+ #container {
+  padding-top: 20px;
+      width: 88%;
+      height: 150%;
+      margin: 0;
+      padding: 0;
+    }
+
+body{
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  background-color: #ebebeb;
+  font-family: "Calibri", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  padding-left: 1%;
+  background-color: black;
+  color: white;
+
+}
+
+.brand-name{
+  width: 10%;
+}
+.options-menu{
+  margin-left: -5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+}
+
+.options{
+  margin: 2%;
+  /* margin-top:4% !important; */
+  padding: 1%;
+}
+
+.options:hover{
+  border-radius: 30px;
+  background-color: #44a29c;
+  padding: 1%;
+}
+
+#two.brand{
+  margin-top: -10%;
+  margin-left: 3%;
+}
+
+#one.brand{
+  margin-top: 10%;
+}
+
+form{
+width: 200px;
+margin-top:5%;
+background-color: #f3f4f4;
+border-radius: 10px;
+}
+
+input[type=search]{
+width: 200px;
+height: 40px;
+font-size: 16px;
+padding: 0px 20px 0px 40px;
+border-radius: 10px;
+outline: none;
+border: solid gray 2px;
+background-color: white;
+background: url('Search.png') 150px center no-repeat;
+}
+
+.notification {
+  padding-left: 4%;
+  padding-top: 0.9%;
+}
+ .settings{
+  padding-left: 4%;
+  padding-top: 1.1%;
+}
+
+.logout{
+  padding-left: 5%;
+  padding-top: 0.7%;
+  font-size: 11px;
+  margin-right: 3%;
+}
+
+.admin-panel{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.left-panel{
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.right-panel{
+  width: 70%;
+  margin-left: 0;
+  margin-top: 5%;
+}
+.top-left-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  
+}
+
+.tlb{
+  display: flex;
+  margin-top: 2% !important;
+  flex-direction: row;
+  width: 120% !important;
+  height: 10% !important;
+  font-size: 6px;
+  margin-bottom: 5%;
+}
+
+ #tlb-2, #tlb-3{
+  margin-left: 2%;
+
+}
+
+.amount-panel{
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 20%;
+  padding:  5px 10px 5px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.panel1{
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 10px;
+  width: 20%;
+  padding:  5px 10px 5px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom: 4px solid black;
+}
+
+#black{
+  background-color: #181f27 !important;
+  color: white
+}
+
+.grey-text{
+  color:grey;
+}
+
+.add-info{
+  background-color: #bce1e0;
+  border-radius: 2px;
+  font-size: 6px;
+  width: 50%;
+  text-align: center;
+}
+
+#total-earnings{
+  width:50%;
+  align-items: left;
+}
+
+.top-panel{
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+
+}
+.number{
+  font-size: 40px;
+  margin-top: 5px;
+}
+.main-text{
+  margin-top: -30px;
+  font-size: 18px;
+}
+.note-info{
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+/* .bottom-panel{
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 10px;
+  width: 20%;
+  padding:  5px 10px 5px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ 
+} */
+
+.shadow-table {
+  border-collapse: collapse;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 40%;
+  padding:  5px 10px 5px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.shadow-table th, .shadow-table td {
+  padding: 10px;
+  padding-left: 27px !important;
+  padding-right: 27px !important;
+  
+}
+
+.shadow-table th {
+  background-color: #fdfdfd;
+}
+
+#blue{
+  color: #44a29c;}
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand-name">
+      <h2 class="brand" id="one">Admin Panel</h2>
+      <h2 class="brand" id="two">Fly | Flytor</h2>
+    </div>
+    <div class="options-menu">
+      <h2 class="options">FLYTORS</h2>
+      <h2 class="options">FLY USERS</h2>
+      <h2 class="options">PAYMENTS</h2>
+      <h2 class="options">ORDERS</h2>
+    </div>
+    <div class="search-containter">
+      <form action="#">
+        <input type="search" placeholder="Seach">
+        </form>
+    </div>
+    <div class="notification">
+      <img src="Notification icon.png" alt="Image" />
+    </div>
+    <div class="settings">
+      <img src="Group 159.png" alt="Image" />
+    </div>
+    <div class="logout">
+      <h2>Logout</h2>
+    </div>
+  </div>
+  <div class="admin-panel">
+    <div class="left-panel">
+      <div class="top-left-panel">
+        <div class="amount-panel" id="total-earnings">
+          <h2 class="grey-text">TOTAL EARNINGS BY SOARON</h2>
+          <h2 class="amount-text">₹ 25,000.21</h2>
+          <h4 class="add-info">This should be paid</h4>
+        </div>
+        <div class="tlb">
+          <div class="amount-panel" id="tlb-1">
+            <h2 class="grey-text">TOTAL PAID BY SOARON</h2>
+            <h2 class="amount-text">₹ 25,000.21</h2>
+          </div>
+          <div class="amount-panel" id="tlb-2">
+            <h2 class="grey-text">TOTAL EARNED BY SOARON</h2>
+            <h2 class="amount-text">₹ 25,000.21</h2>
+            <h4 class="add-info">This should be paid</h4>
+          </div>
+          <div class="amount-panel" id="tlb-3">
+            <h2 class="grey-text">TOTAL EARNINGS BY SOARON</h2>
+            <h2 class="amount-text">₹ 25,000.21</h2>
+          </div>
+      </div>
+      <div id="container"></div>
+  
+
+      <script>
+    
+        anychart.onDocumentReady(function () {
+          // create pie chart with passed data
+          var chart = anychart.pie([
+            ['1', 80540],
+            ['2', 94190],
+            ['3', 102610],
+            ['4', 110430],
+            ['5', 128000],
+          ]);
+    
+          // create range color palette with color ranged between light blue and dark blue
+          var palette = anychart.palettes.rangeColors();
+          palette.items([{ color: '#aed4d3' }, { color: '#439e98' }]);
+    
+          // set chart title text settings
+          chart
+            // set chart radius
+            .innerRadius('40%')
+            // set palette to the chart
+            .palette(palette);
+    
+          // set container id for the chart
+          chart.container('container');
+          // initiate chart drawing
+          chart.draw();
+        });
+      
+    </script>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="top-panel">
+        <div class="panel1" id="one1">
+          <h2 class="number">21</h2>
+          <h2 class="main-text">ALL PAYMENTS</h2>
+          <h4 class="note-info">Last payment recivedd on 10th Dec</h4>
+          
+        </div>
+        <div class="panel1" id="two2">
+          <h2 class="number">12</h2>
+          <h2 class="main-text">ALL PAYMENTS</h2>
+          <h4 class="note-info">Last payment recivedd on 10th Dec</h4>
+        </div>
+        <div class="panel1" id="black">
+          <h2 class="number">9</h2>
+          <h2 class="main-text">PENDING PAYMENTS</h2>
+          <h4 class="note-info">Last reciept on 10th Dec</h4>
+        </div>
+      </div>
+      <table class="shadow-table">
+        <tr>
+          <th>USER</th>
+          <th>RAZORPAY</th>
+          <th>SOARON</th>
+          <th>FLYTOR</th>
+          <th>ORDER ID</th>
+          <th>USER</th>
+          <th>FLYTOR </th>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+        <tr>
+          <td><img src="one.png" alt="Image" /></td>
+          <td><img src="two.png" alt="Image" /></td>
+          <td><img src="three.png" alt="Image" /></td>
+          <td><img src="FOUR.png" alt="Image" /></td>
+          <td id="blue" >0876432973001</td>
+          <td>Rajiv</td>
+          <td>Vamshi</td>
+        </tr>
+      </table>
+      
+    </div>
+   
+  </div>
+
+</body>
+</html>
